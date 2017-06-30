@@ -17,7 +17,15 @@ module Types =
         let result = fn x y
         push result stack''
 
+    let unary fn stack =
+        let x,stack' = pop stack
+        push (fn x) stack'
+
     let ADD = binary (+)
-    let MUL stack = binary (*)
+    let MUL = binary (*)
+    let SUB = binary (-)
+
+    let NEG = unary (fun x -> -x)
+    let SQUARE = unary (fun x -> x * x)
 
     
