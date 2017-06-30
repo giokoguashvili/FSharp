@@ -3,6 +3,7 @@
 module Program
 open Calc
 open Primitives.Types
+open Temp
 
 [<EntryPoint>]
 let main argv =
@@ -21,4 +22,9 @@ let main argv =
 
     printfn "%A" <| (EMPTY |> ONE |> TWO |> ADD |> THREE |> MUL)
     printfn "%A" <| (EMPTY |> ONE |> TWO |> ADD |> THREE |> MUL |> NEG)
+    EMPTY |> ONE |> TWO |> ADD |> THREE |> MUL |> NEG |> SHOW |> ignore
+
+    out <| sum 2 5
+
+
     0 // return an integer exit code

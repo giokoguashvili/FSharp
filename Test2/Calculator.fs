@@ -22,3 +22,8 @@ let SUB = binary (-)
 
 let NEG = unary (fun x -> -x)
 let SQUARE = unary (fun x -> x * x)
+
+let SHOW stack =
+    let top,_ = pop stack
+    printfn "The answr is: %A" top
+    stack
