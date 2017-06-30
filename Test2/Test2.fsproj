@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Types.fs" />
     <Compile Include="Stack.fs" />
-    <Compile Include="Calc.fs" />
+    <Compile Include="Calculator.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
