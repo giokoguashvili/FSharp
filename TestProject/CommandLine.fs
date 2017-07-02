@@ -2,23 +2,24 @@
 
 module CommandLine =
 
-    let OrderByName = "N"
-    let OrderBySize = "S"
+    type OrderByOption = OrderBySize | OrderByName
+    type SubdirectoriesOption = IncludeSubdirectories | ExcludeSubdirectories
+    type VerboseOption = VerboseOutput | TerseOutput
 
     type CommandLineOptions = {
-        verbose: bool;
-        subdirectoris: bool;
-        orderby: string
+        verbose: VerboseOption;
+        subdirectoris: SubdirectoriesOption;
+        orderby: OrderByOption
         }
 
     let rec parseCommandLineRec args optionsSoFar =
         match args with 
         | [] -> optionsSoFar
         | "/v"::xs ->
-            let newOptionsSoFar = { optionsSoFar with verbose = true }
+            let newOptionsSoFar = { optionsSoFar with verbose = VerboseOutput }
             parseCommandLineRec xs newOptionsSoFar
         | "/s"::xs  ->
-            let newOptionsSoFar = { optionsSoFar with subdirectoris = true }
+            let newOptionsSoFar = { optionsSoFar with subdirectoris = IncludeSubdirectories }
             parseCommandLineRec xs newOptionsSoFar
         | "/o"::xs ->
             match xs with
@@ -39,8 +40,8 @@ module CommandLine =
     let parseCommandLine args = 
 
         let defaultOptions = {
-            verbose = true;
-            subdirectoris = false;
+            verbose = TerseOutput;
+            subdirectoris = ExcludeSubdirectories;
             orderby = OrderByName
             }
         parseCommandLineRec args defaultOptions
