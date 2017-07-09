@@ -5,6 +5,11 @@ open Domain.Model
 open LINQ
 open Gio.CommandLine
 
+type Aa = {Name:string}
+type Bb = {Age:int}
+type Cc = 
+        | A of Aa 
+        | B of Bb
 let matcher x =
     let typ = typeof<int>
     let less x b = x < b
@@ -22,6 +27,11 @@ let mm = matcher1 >> matcher2
 
 [<EntryPoint>]
 let main argv = 
+
+    let gggggg x = match x with
+                    | A a -> printf "%A" <| a 
+                    | B b -> printf "%A" <| b 
+
     printfn "%A" <| (sum 2 3)
     let empl = Employee.create "gio" 25
     printfn "%A" <| empl
