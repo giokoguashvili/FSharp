@@ -60,8 +60,22 @@ let orElse parser1 parser2 =
             result2
     Parser innerFn
 
+let mapP f parser =
+    let innerFn input =
+        let result = run parser input
+        match result with
+        | Success (value,remaining) -> 
+            let newValue = f value
+            Success (newValue,remaining)
+        |Failure err -> 
+            Failure err
+    Parser innerFn
+
 let ( .>>. ) = andThen
 let ( <|> ) = orElse
+
+let ( <!> ) = mapP
+let ( |>> ) x f = mapP f x
 
 let choice listOfParsers =
     List.reduce ( <|> ) listOfParsers
@@ -70,6 +84,13 @@ let anyOf listOfChars =
     listOfChars
     |> List.map pchar
     |> choice
+
+let parseDigit =
+    anyOf ['0'..'9']
+
+let parseDigits =
+         parseDigit .>>. parseDigit .>>. parseDigit .>>. parseDigit    
+
 
 [<EntryPoint>]
 let main argv = 
@@ -99,4 +120,18 @@ let main argv =
 
     printfn "%A" <| run parseDigit "1BC"
     printfn "%A" <| run parseDigit "BBC"
+
+    let parseThreeDigitsAsStr =
+        let tupleParser =
+            parseDigit .>>. parseDigit .>>. parseDigit
+        let transformTuple ((c1,c2),c3) =
+            String [|c1;c2;c3|]
+        mapP transformTuple tupleParser
+
+    let parseThreeDigitsAsStr2 =
+        (parseDigit .>>. parseDigit .>>. parseDigit)
+        |>> fun ((c1,c2),c3) -> String [|c1;c2;c3|]
+
+    printfn "%A" <| run parseThreeDigitsAsStr2 "123B"
+    printfn "%A" <| run parseThreeDigitsAsStr2 "12AB"
     0 // return an integer exit code
