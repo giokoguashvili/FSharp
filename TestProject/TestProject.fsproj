@@ -55,6 +55,8 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="Inheritence.fs" />
+    <Compile Include="Classes.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="MathModule.fs" />
     <Compile Include="Employee.fs" />

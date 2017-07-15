@@ -11,3 +11,4 @@ module Employee =
 
     let create name age = {Name=name; Age=age}
     let sayName (printer:Printf.TextWriterFormat<'T>-> 'T) (empl:EmployeeType) = printer "%s" empl.Name
+
