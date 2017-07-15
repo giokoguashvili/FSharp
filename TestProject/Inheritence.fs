@@ -10,3 +10,12 @@ type Word() =
 module Inter =
     let word = new Word()
     printfn "%A" <| (word :> IWord).Content()
+
+    let show (word:IWord) =
+        word.Content()
+    
+    let answ = 
+        show {new IWord with
+                 member this.Content() = 
+                    "asd"}
+    printfn "%A" answ
