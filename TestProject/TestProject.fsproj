@@ -69,6 +69,7 @@
     <Content Include="packages.config" />
     <Compile Include="Rec.fs" />
     <Compile Include="Program.fs" />
+    <Compile Include="StrToInt.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

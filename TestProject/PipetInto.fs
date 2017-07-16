@@ -49,6 +49,8 @@ let dividedByWorkflow x y z =
 let result = dividedByWorkflow 109 2 3
 printfn "%A" result
 
+
+
 type Logger() =
     member this.Bind(expression, fn) = 
         match expression with
@@ -57,6 +59,7 @@ type Logger() =
     member this.Return(x) = Some x
 
 let logger = new Logger()
+let ( >>= ) m f = Option.bind f m
 let loggedDividedByWorkflow a b c = 
     logger 
         {
@@ -65,5 +68,12 @@ let loggedDividedByWorkflow a b c =
         return y
         }
 
+
 let result' = loggedDividedByWorkflow 109 2 3
+let divideByWorkflow'' a b c =
+    b |> dividedBy a
+    >>= dividedBy c
+    
 printfn "%A" result'
+
+
