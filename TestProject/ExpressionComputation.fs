@@ -20,8 +20,9 @@ module ExpressionComputation =
         maybe 
             {
             let! a = divideBy x init
-            return a
+            return 1
             }
+
     let workflow = 
         maybe.Bind(
             divideBy 2 3, 

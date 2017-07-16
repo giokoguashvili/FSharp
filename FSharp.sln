@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestProject", "TestProject\TestProject.fsproj", "{D7EA061E-A399-4B02-A560-A2A07058FC56}"
 EndProject
@@ -10,6 +10,18 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{69FCF106-98E8-4BFF-A0A6-9DCDC05A4349}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParserCombinator", "ParserCombinator\ParserCombinator.fsproj", "{32E3ABC2-3C13-4D84-9EC8-426F44B3D9E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ParserCombinators", "ParserCombinators", "{BA781C31-50A2-48ED-93C3-1E49910A96BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ParserCombinators\ConsoleApp1\ConsoleApp1.csproj", "{FBC67ED6-EAF9-48AA-8084-A6270C1D8186}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication2", "ParserCombinators\ConsoleApplication2\ConsoleApplication2.fsproj", "{A4A01AEE-192A-4F97-8309-F5B594A05542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsreCombinators", "ParserCombinators\ParsreCombinators\ParsreCombinators.csproj", "{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models1", "ParserCombinators\Models1\Models1.csproj", "{87F18838-42DB-4445-9385-1366D626B79A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Paradigmes", "Paradigmes", "{31A9F2C6-D938-486F-B2D8-75C1FA016852}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +45,31 @@ Global
 		{32E3ABC2-3C13-4D84-9EC8-426F44B3D9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E3ABC2-3C13-4D84-9EC8-426F44B3D9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32E3ABC2-3C13-4D84-9EC8-426F44B3D9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC67ED6-EAF9-48AA-8084-A6270C1D8186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC67ED6-EAF9-48AA-8084-A6270C1D8186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC67ED6-EAF9-48AA-8084-A6270C1D8186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC67ED6-EAF9-48AA-8084-A6270C1D8186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A01AEE-192A-4F97-8309-F5B594A05542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A01AEE-192A-4F97-8309-F5B594A05542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A01AEE-192A-4F97-8309-F5B594A05542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A01AEE-192A-4F97-8309-F5B594A05542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F18838-42DB-4445-9385-1366D626B79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F18838-42DB-4445-9385-1366D626B79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F18838-42DB-4445-9385-1366D626B79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F18838-42DB-4445-9385-1366D626B79A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32E3ABC2-3C13-4D84-9EC8-426F44B3D9E5} = {BA781C31-50A2-48ED-93C3-1E49910A96BF}
+		{FBC67ED6-EAF9-48AA-8084-A6270C1D8186} = {31A9F2C6-D938-486F-B2D8-75C1FA016852}
+		{A4A01AEE-192A-4F97-8309-F5B594A05542} = {31A9F2C6-D938-486F-B2D8-75C1FA016852}
+		{FA159DDD-C1FD-4511-9DE3-25FE1A6E5AF4} = {BA781C31-50A2-48ED-93C3-1E49910A96BF}
+		{87F18838-42DB-4445-9385-1366D626B79A} = {BA781C31-50A2-48ED-93C3-1E49910A96BF}
 	EndGlobalSection
 EndGlobal
