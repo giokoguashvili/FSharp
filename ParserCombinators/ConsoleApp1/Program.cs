@@ -22,6 +22,14 @@ namespace ConsoleApp1
             Imperative.Run();
             Procedural.Run();
             ObjectOriented.Run();
+
+            Console
+                .WriteLine(
+                    new ResultView(
+                          new HalfPyramid(4, '#')
+                    )
+                );
+
             Console.ReadLine();
         }
     }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ClassLibrary1
 {
@@ -58,7 +60,31 @@ namespace ClassLibrary1
         }
         public void Result()
         {
+            new List<int>()
+                .Match(
+                    any: (x) => "",
+                    empty: () => ""
+                ).First();
 
         }
     }
+}
+
+public static class A
+{
+public static TResult Match<T, TResult>(
+        this IEnumerable<T> list,
+        Func<T, TResult> any,
+        Func<TResult> empty
+    )
+{
+    if (list.Any())
+    {
+        return any(list.First());
+    } 
+    else
+    {
+        return empty();
+    }
+}
 }
