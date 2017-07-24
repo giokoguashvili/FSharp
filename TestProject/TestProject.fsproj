@@ -70,6 +70,7 @@
     <Compile Include="Rec.fs" />
     <Compile Include="Program.fs" />
     <Compile Include="StrToInt.fs" />
+    <Compile Include="NewLineFeature.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
