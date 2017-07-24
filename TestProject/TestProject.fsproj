@@ -72,6 +72,7 @@
     <Compile Include="StrToInt.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="NewLineFeature.fs" />
+    <Compile Include="Applicative.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
